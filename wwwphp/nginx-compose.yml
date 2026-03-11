@@ -16,6 +16,9 @@ services:
         order: start-first
       rollback_config:
         order: start-first
+      placement:
+        constraints:
+          - node.hostname==swarm-3
 
   php:
     image: php:8.4-fpm
