@@ -1,0 +1,12 @@
+---
+services:
+  load:
+    image: alpine:3.23
+    command:
+      - sh
+      - -c
+      - |
+        while :
+        do
+          :
+        done
