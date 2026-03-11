@@ -1,0 +1,37 @@
+---
+services:
+  www:
+    image: nginx:1.22
+    ports:
+      - 80:80
+    volumes:
+      - html:/usr/share/nginx/html
+      - nginx-conf:/etc/nginx/conf.d
+    networks:
+      wwwnet:
+
+  php:
+    image: php:8.4-fpm
+    volumes:
+      - html:/var/www/html
+    networks:
+      wwwnet:
+    deploy:
+      replicas: 2
+
+networks:
+  wwwnet:
+    name: wwwnet
+
+volumes:
+  html:
+    driver_opts:
+      type: nfs
+      o: addr=192.168.56.251,vers=4.2
+      device: ":/html"
+
+  nginx-conf:
+    driver_opts:
+      type: nfs
+      o: addr=192.168.56.251,vers=4.2
+      device: ":/nginx-conf"
