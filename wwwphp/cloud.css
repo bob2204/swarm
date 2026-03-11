@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+.header{
+    text-align:center;
+    font-size:28px;
+    padding:20px;
+}
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    margin:15px;
+    width:300px;
+    text-align:left;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+th {
+    padding-right: 10px
+}
+
+.node{
+    font-size:24px;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+.info{
+    font-size:16px;
+    margin:6px 0;
+    color:#cbd5f5;
+}
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#94a3b8;
+    width:100%;
+}
