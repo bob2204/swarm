@@ -9,11 +9,15 @@ services:
       - nginx-conf:/etc/nginx/conf.d
     networks:
       wwwnet:
+    depends_on:
+      - php
 
   php:
     image: php:8.4-fpm
     volumes:
       - html:/var/www/html
+    environment:
+      NODE_NAME: "{{ .Node.Hostname }}"
     networks:
       wwwnet:
     deploy:
