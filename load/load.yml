@@ -10,3 +10,8 @@ services:
         do
           :
         done
+    deploy:
+      resources:
+        limits:
+          cpus: "0.30"
+          memory: "50M"
