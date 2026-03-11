@@ -9,6 +9,8 @@ services:
     networks:
       whonet:
     restart: always
+    deploy:
+      replicas: 2
 
 networks:
   whonet:
