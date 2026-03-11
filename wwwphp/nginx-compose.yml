@@ -1,7 +1,7 @@
 ---
 services:
   www:
-    image: nginx:1.22
+    image: nginx:1.26
     ports:
       - 80:80
     volumes:
@@ -11,6 +11,11 @@ services:
       wwwnet:
     depends_on:
       - php
+    deploy:
+      update_config:
+        order: start-first
+      rollback_config:
+        order: start-first
 
   php:
     image: php:8.4-fpm
