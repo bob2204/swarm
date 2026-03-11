@@ -4,9 +4,15 @@
   $pod    = getenv('HOSTNAME');
   
   // Couleur stable par node
-  $hash   = crc32($node);
-  $h      = $hash % 360;
-  $color  = "hsl($h,70%,45%)";
+  $palette = [
+  "#e6194b","#3cb44b","#ffe119","#4363d8","#f58231",
+  "#911eb4","#46f0f0","#f032e6","#bcf60c","#fabebe",
+  "#008080","#e6beff","#9a6324","#fffac8","#800000",
+  "#aaffc3","#808000","#ffd8b1","#000075","#808080"
+  ];
+
+  $index = abs(crc32($node)) % count($palette);
+  $color = $palette[$index];
   
   // Gestion compteur local (par pod)
   // Chaque pod garde son compteur dans un fichier temporaire
