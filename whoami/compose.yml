@@ -1,0 +1,14 @@
+---
+#name: whoami
+services:
+  whoami:
+    image: traefik/whoami:v1.11
+    container_name: whoami
+    ports:
+      - 80:80
+    networks:
+      whonet:
+    restart: always
+
+networks:
+  whonet:
